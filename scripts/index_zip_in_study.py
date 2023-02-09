@@ -9,6 +9,7 @@ import click
 from bia_integrator_core.integrator import load_and_annotate_study
 from bia_integrator_core.interface import persist_study
 from bia_integrator_core.models import BIAFile, BIAImageRepresentation, BIAImage
+from bia_integrator_tools.io import copy_uri_to_local
 
 from bst_pulldown import IMAGE_EXTS
 
@@ -28,7 +29,7 @@ def fetch_zipfile_with_caching(zipfile: BIAFile) -> Path:
     dst_fpath = cache_dirpath/dst_fname
     
     if not dst_fpath.exists():
-        copy_uri_to_local(zipfile_uri, dst_fpath)
+        copy_uri_to_local(zipfile_rep.uri, dst_fpath)
         logger.info(f"Downloading zipfile to {dst_fpath}")
     else:
         logger.info(f"Zipfile exists at {dst_fpath}")
