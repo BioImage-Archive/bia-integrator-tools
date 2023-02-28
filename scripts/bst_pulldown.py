@@ -23,6 +23,7 @@ ARCHIVE_EXTS = ['.zip']
 
 
 def is_image(file: File) -> bool:
+    # This will not find ome.tiff (suffix returns only last part of extension)
     return file.path.suffix.lower() in IMAGE_EXTS
 
 
