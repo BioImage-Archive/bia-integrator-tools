@@ -1,3 +1,7 @@
+> **Warning**
+> This repository has been merged into https://github.com/BioImage-Archive/bia-integrator, and is now archived.
+
+
 BIA integrator tools
 ====================
 
